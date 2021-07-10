@@ -8,6 +8,7 @@ part of serializers;
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AppState.serializer)
+      ..add(Current.serializer)
       ..add(Location.serializer)
       ..add(Weather.serializer))
     .build();
