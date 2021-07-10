@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             const LocationWidget(),
             const WeatherWidget(),
-            Row()
+            Row(),
           ],
         ),
       ),
