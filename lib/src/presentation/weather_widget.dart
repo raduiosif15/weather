@@ -6,6 +6,10 @@ import 'package:weather/src/models/weather.dart';
 class WeatherWidget extends StatelessWidget {
   const WeatherWidget({Key? key}) : super(key: key);
 
+  double _getCelsiusFromKelvin(double temp) {
+    return temp - 274.15;
+  }
+
   @override
   Widget build(BuildContext context) {
     return WeatherContainer(
@@ -16,7 +20,29 @@ class WeatherWidget extends StatelessWidget {
           );
         }
 
-        return Text('${weather.current.temp}');
+        return Column(
+          children: <Widget>[
+            const SizedBox(height: 20.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Icon(
+                  Icons.wb_sunny_outlined,
+                  color: Colors.black,
+                  size: 40,
+                ),
+                Text(
+                  _getCelsiusFromKelvin(weather.current.temp).toStringAsFixed(2),
+                  style: const TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
       },
     );
   }
