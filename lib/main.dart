@@ -4,7 +4,6 @@ import 'package:http/http.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:weather/src/actions/get_location.dart';
-import 'package:weather/src/actions/get_weather.dart';
 import 'package:weather/src/data/location_api.dart';
 import 'package:weather/src/data/weather_api.dart';
 import 'package:weather/src/epic/epic.dart';
