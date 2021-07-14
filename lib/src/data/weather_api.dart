@@ -1,18 +1,18 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:weather/src/models/location.dart';
 import 'package:weather/src/models/weather.dart';
 
 class WeatherApi {
-  WeatherApi({required String apiUrl, required Client client})
-      : _apiUrl = apiUrl,
-        _client = client;
+  WeatherApi({required Client client}) : _client = client;
 
-  final String _apiUrl;
   final Client _client;
 
-  Future<Weather> getWeather() async {
-    final Uri uri = Uri.parse(_apiUrl);
+  Future<Weather> getWeather(Location location) async {
+    final String apiUrl =
+        'https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.lon}&exclude=hourly,minutely&appid=503ad05f4fe3732aa3078ffcd21a3f09';
+    final Uri uri = Uri.parse(apiUrl);
     final Response response = await _client.get(uri);
 
     if (response.statusCode >= 300) {
