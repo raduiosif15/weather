@@ -71,9 +71,7 @@ mixin _$GetLocation {
 
 /// @nodoc
 abstract class $GetLocationCopyWith<$Res> {
-  factory $GetLocationCopyWith(
-          GetLocation value, $Res Function(GetLocation) then) =
-      _$GetLocationCopyWithImpl<$Res>;
+  factory $GetLocationCopyWith(GetLocation value, $Res Function(GetLocation) then) = _$GetLocationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -87,17 +85,14 @@ class _$GetLocationCopyWithImpl<$Res> implements $GetLocationCopyWith<$Res> {
 
 /// @nodoc
 abstract class $GetLocationStartCopyWith<$Res> {
-  factory $GetLocationStartCopyWith(
-          GetLocationStart value, $Res Function(GetLocationStart) then) =
+  factory $GetLocationStartCopyWith(GetLocationStart value, $Res Function(GetLocationStart) then) =
       _$GetLocationStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetLocationStartCopyWithImpl<$Res>
-    extends _$GetLocationCopyWithImpl<$Res>
+class _$GetLocationStartCopyWithImpl<$Res> extends _$GetLocationCopyWithImpl<$Res>
     implements $GetLocationStartCopyWith<$Res> {
-  _$GetLocationStartCopyWithImpl(
-      GetLocationStart _value, $Res Function(GetLocationStart) _then)
+  _$GetLocationStartCopyWithImpl(GetLocationStart _value, $Res Function(GetLocationStart) _then)
       : super(_value, (v) => _then(v as GetLocationStart));
 
   @override
@@ -177,17 +172,14 @@ abstract class GetLocationStart implements GetLocation {
 
 /// @nodoc
 abstract class $GetLocationSuccessfulCopyWith<$Res> {
-  factory $GetLocationSuccessfulCopyWith(GetLocationSuccessful value,
-          $Res Function(GetLocationSuccessful) then) =
+  factory $GetLocationSuccessfulCopyWith(GetLocationSuccessful value, $Res Function(GetLocationSuccessful) then) =
       _$GetLocationSuccessfulCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetLocationSuccessfulCopyWithImpl<$Res>
-    extends _$GetLocationCopyWithImpl<$Res>
+class _$GetLocationSuccessfulCopyWithImpl<$Res> extends _$GetLocationCopyWithImpl<$Res>
     implements $GetLocationSuccessfulCopyWith<$Res> {
-  _$GetLocationSuccessfulCopyWithImpl(
-      GetLocationSuccessful _value, $Res Function(GetLocationSuccessful) _then)
+  _$GetLocationSuccessfulCopyWithImpl(GetLocationSuccessful _value, $Res Function(GetLocationSuccessful) _then)
       : super(_value, (v) => _then(v as GetLocationSuccessful));
 
   @override
@@ -267,18 +259,15 @@ abstract class GetLocationSuccessful implements GetLocation {
 
 /// @nodoc
 abstract class $GetLocationErrorCopyWith<$Res> {
-  factory $GetLocationErrorCopyWith(
-          GetLocationError value, $Res Function(GetLocationError) then) =
+  factory $GetLocationErrorCopyWith(GetLocationError value, $Res Function(GetLocationError) then) =
       _$GetLocationErrorCopyWithImpl<$Res>;
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class _$GetLocationErrorCopyWithImpl<$Res>
-    extends _$GetLocationCopyWithImpl<$Res>
+class _$GetLocationErrorCopyWithImpl<$Res> extends _$GetLocationCopyWithImpl<$Res>
     implements $GetLocationErrorCopyWith<$Res> {
-  _$GetLocationErrorCopyWithImpl(
-      GetLocationError _value, $Res Function(GetLocationError) _then)
+  _$GetLocationErrorCopyWithImpl(GetLocationError _value, $Res Function(GetLocationError) _then)
       : super(_value, (v) => _then(v as GetLocationError));
 
   @override
@@ -322,11 +311,9 @@ class _$GetLocationError implements GetLocationError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is GetLocationError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.stackTrace, stackTrace) ||
-                const DeepCollectionEquality()
-                    .equals(other.stackTrace, stackTrace)));
+                const DeepCollectionEquality().equals(other.stackTrace, stackTrace)));
   }
 
   @override
@@ -390,14 +377,12 @@ class _$GetLocationError implements GetLocationError {
 }
 
 abstract class GetLocationError implements GetLocation, ErrorAction {
-  const factory GetLocationError(Object error, StackTrace stackTrace) =
-      _$GetLocationError;
+  const factory GetLocationError(Object error, StackTrace stackTrace) = _$GetLocationError;
 
   Object get error => throw _privateConstructorUsedError;
   StackTrace get stackTrace => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetLocationErrorCopyWith<GetLocationError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetLocationErrorCopyWith<GetLocationError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -459,9 +444,7 @@ mixin _$GetWeather {
 
 /// @nodoc
 abstract class $GetWeatherCopyWith<$Res> {
-  factory $GetWeatherCopyWith(
-          GetWeather value, $Res Function(GetWeather) then) =
-      _$GetWeatherCopyWithImpl<$Res>;
+  factory $GetWeatherCopyWith(GetWeather value, $Res Function(GetWeather) then) = _$GetWeatherCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -475,16 +458,14 @@ class _$GetWeatherCopyWithImpl<$Res> implements $GetWeatherCopyWith<$Res> {
 
 /// @nodoc
 abstract class $GetWeatherStartCopyWith<$Res> {
-  factory $GetWeatherStartCopyWith(
-          GetWeatherStart value, $Res Function(GetWeatherStart) then) =
+  factory $GetWeatherStartCopyWith(GetWeatherStart value, $Res Function(GetWeatherStart) then) =
       _$GetWeatherStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class _$GetWeatherStartCopyWithImpl<$Res> extends _$GetWeatherCopyWithImpl<$Res>
     implements $GetWeatherStartCopyWith<$Res> {
-  _$GetWeatherStartCopyWithImpl(
-      GetWeatherStart _value, $Res Function(GetWeatherStart) _then)
+  _$GetWeatherStartCopyWithImpl(GetWeatherStart _value, $Res Function(GetWeatherStart) _then)
       : super(_value, (v) => _then(v as GetWeatherStart));
 
   @override
@@ -564,17 +545,14 @@ abstract class GetWeatherStart implements GetWeather {
 
 /// @nodoc
 abstract class $GetWeatherSuccessfulCopyWith<$Res> {
-  factory $GetWeatherSuccessfulCopyWith(GetWeatherSuccessful value,
-          $Res Function(GetWeatherSuccessful) then) =
+  factory $GetWeatherSuccessfulCopyWith(GetWeatherSuccessful value, $Res Function(GetWeatherSuccessful) then) =
       _$GetWeatherSuccessfulCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetWeatherSuccessfulCopyWithImpl<$Res>
-    extends _$GetWeatherCopyWithImpl<$Res>
+class _$GetWeatherSuccessfulCopyWithImpl<$Res> extends _$GetWeatherCopyWithImpl<$Res>
     implements $GetWeatherSuccessfulCopyWith<$Res> {
-  _$GetWeatherSuccessfulCopyWithImpl(
-      GetWeatherSuccessful _value, $Res Function(GetWeatherSuccessful) _then)
+  _$GetWeatherSuccessfulCopyWithImpl(GetWeatherSuccessful _value, $Res Function(GetWeatherSuccessful) _then)
       : super(_value, (v) => _then(v as GetWeatherSuccessful));
 
   @override
@@ -654,8 +632,7 @@ abstract class GetWeatherSuccessful implements GetWeather {
 
 /// @nodoc
 abstract class $GetWeatherErrorCopyWith<$Res> {
-  factory $GetWeatherErrorCopyWith(
-          GetWeatherError value, $Res Function(GetWeatherError) then) =
+  factory $GetWeatherErrorCopyWith(GetWeatherError value, $Res Function(GetWeatherError) then) =
       _$GetWeatherErrorCopyWithImpl<$Res>;
   $Res call({Object error, StackTrace stackTrace});
 }
@@ -663,8 +640,7 @@ abstract class $GetWeatherErrorCopyWith<$Res> {
 /// @nodoc
 class _$GetWeatherErrorCopyWithImpl<$Res> extends _$GetWeatherCopyWithImpl<$Res>
     implements $GetWeatherErrorCopyWith<$Res> {
-  _$GetWeatherErrorCopyWithImpl(
-      GetWeatherError _value, $Res Function(GetWeatherError) _then)
+  _$GetWeatherErrorCopyWithImpl(GetWeatherError _value, $Res Function(GetWeatherError) _then)
       : super(_value, (v) => _then(v as GetWeatherError));
 
   @override
@@ -708,11 +684,9 @@ class _$GetWeatherError implements GetWeatherError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is GetWeatherError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.stackTrace, stackTrace) ||
-                const DeepCollectionEquality()
-                    .equals(other.stackTrace, stackTrace)));
+                const DeepCollectionEquality().equals(other.stackTrace, stackTrace)));
   }
 
   @override
@@ -776,12 +750,10 @@ class _$GetWeatherError implements GetWeatherError {
 }
 
 abstract class GetWeatherError implements GetWeather, ErrorAction {
-  const factory GetWeatherError(Object error, StackTrace stackTrace) =
-      _$GetWeatherError;
+  const factory GetWeatherError(Object error, StackTrace stackTrace) = _$GetWeatherError;
 
   Object get error => throw _privateConstructorUsedError;
   StackTrace get stackTrace => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetWeatherErrorCopyWith<GetWeatherError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetWeatherErrorCopyWith<GetWeatherError> get copyWith => throw _privateConstructorUsedError;
 }

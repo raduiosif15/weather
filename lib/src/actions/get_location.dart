@@ -9,9 +9,3 @@ class GetLocation with _$GetLocation implements AppAction {
   @Implements(ErrorAction)
   const factory GetLocation.error(Object error, StackTrace stackTrace) = GetLocationError;
 }
-
-class GetLocationSuccessful{
-  final Location location;
-
-  GetLocationSuccessful(this.location);
-}

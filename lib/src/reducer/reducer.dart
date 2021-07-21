@@ -20,7 +20,7 @@ AppState _getLocation(AppState state, GetLocation action) {
 
 AppState _getLocationSuccessful(AppState state, GetLocationSuccessful action) {
   return state.rebuild((AppStateBuilder b) {
-    b.location.replace(action);
+    b.location.replace(state.location!);
   });
 }
 
@@ -34,7 +34,7 @@ AppState _getWeather(AppState state, GetWeather action) {
 
 AppState _getWeatherSuccessful(AppState state, GetWeatherSuccessful action) {
   return state.rebuild((AppStateBuilder b) {
-    b.weather.replace(action.weather);
+    b.weather.replace(state.weather!);
   });
 }
 
