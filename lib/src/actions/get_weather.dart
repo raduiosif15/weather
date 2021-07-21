@@ -4,7 +4,7 @@ part of actions;
 class GetWeather with _$GetWeather implements AppAction {
   const factory GetWeather() = GetWeatherStart;
 
-  const factory GetWeather.successful() = GetWeatherSuccessful;
+  const factory GetWeather.successful(Weather weather) = GetWeatherSuccessful;
 
   @Implements(ErrorAction)
   const factory GetWeather.error(Object error, StackTrace stackTrace) = GetWeatherError;

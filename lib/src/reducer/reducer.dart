@@ -4,6 +4,7 @@ import 'package:weather/src/models/index.dart';
 
 Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
   (AppState state, dynamic action) {
+    // print(action);
     return state;
   },
   TypedReducer<AppState, GetLocation>(_getLocation),
@@ -20,7 +21,7 @@ AppState _getLocation(AppState state, GetLocation action) {
 
 AppState _getLocationSuccessful(AppState state, GetLocationSuccessful action) {
   return state.rebuild((AppStateBuilder b) {
-    b.location.replace(state.location!);
+    b.location.replace(action.location);
   });
 }
 
@@ -34,7 +35,7 @@ AppState _getWeather(AppState state, GetWeather action) {
 
 AppState _getWeatherSuccessful(AppState state, GetWeatherSuccessful action) {
   return state.rebuild((AppStateBuilder b) {
-    b.weather.replace(state.weather!);
+    b.weather.replace(action.weather);
   });
 }
 

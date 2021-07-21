@@ -1,6 +1,7 @@
 library actions;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:weather/src/models/index.dart';
 
 part 'index.freezed.dart';
 

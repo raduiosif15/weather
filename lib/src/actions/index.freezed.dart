@@ -20,8 +20,10 @@ class _$GetLocationTearOff {
     return const GetLocationStart();
   }
 
-  GetLocationSuccessful successful() {
-    return const GetLocationSuccessful();
+  GetLocationSuccessful successful(Location location) {
+    return GetLocationSuccessful(
+      location,
+    );
   }
 
   GetLocationError error(Object error, StackTrace stackTrace) {
@@ -40,14 +42,14 @@ mixin _$GetLocation {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function() successful,
+    required TResult Function(Location location) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function()? successful,
+    TResult Function(Location location)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) =>
@@ -121,7 +123,7 @@ class _$GetLocationStart implements GetLocationStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function() successful,
+    required TResult Function(Location location) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return $default();
@@ -131,7 +133,7 @@ class _$GetLocationStart implements GetLocationStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function()? successful,
+    TResult Function(Location location)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -174,6 +176,7 @@ abstract class GetLocationStart implements GetLocation {
 abstract class $GetLocationSuccessfulCopyWith<$Res> {
   factory $GetLocationSuccessfulCopyWith(GetLocationSuccessful value, $Res Function(GetLocationSuccessful) then) =
       _$GetLocationSuccessfulCopyWithImpl<$Res>;
+  $Res call({Location location});
 }
 
 /// @nodoc
@@ -184,46 +187,68 @@ class _$GetLocationSuccessfulCopyWithImpl<$Res> extends _$GetLocationCopyWithImp
 
   @override
   GetLocationSuccessful get _value => super._value as GetLocationSuccessful;
+
+  @override
+  $Res call({
+    Object? location = freezed,
+  }) {
+    return _then(GetLocationSuccessful(
+      location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as Location,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetLocationSuccessful implements GetLocationSuccessful {
-  const _$GetLocationSuccessful();
+  const _$GetLocationSuccessful(this.location);
+
+  @override
+  final Location location;
 
   @override
   String toString() {
-    return 'GetLocation.successful()';
+    return 'GetLocation.successful(location: $location)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GetLocationSuccessful);
+    return identical(this, other) ||
+        (other is GetLocationSuccessful &&
+            (identical(other.location, location) || const DeepCollectionEquality().equals(other.location, location)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(location);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetLocationSuccessfulCopyWith<GetLocationSuccessful> get copyWith =>
+      _$GetLocationSuccessfulCopyWithImpl<GetLocationSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function() successful,
+    required TResult Function(Location location) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return successful();
+    return successful(location);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function()? successful,
+    TResult Function(Location location)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
-      return successful();
+      return successful(location);
     }
     return orElse();
   }
@@ -254,7 +279,11 @@ class _$GetLocationSuccessful implements GetLocationSuccessful {
 }
 
 abstract class GetLocationSuccessful implements GetLocation {
-  const factory GetLocationSuccessful() = _$GetLocationSuccessful;
+  const factory GetLocationSuccessful(Location location) = _$GetLocationSuccessful;
+
+  Location get location => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetLocationSuccessfulCopyWith<GetLocationSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -331,7 +360,7 @@ class _$GetLocationError implements GetLocationError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function() successful,
+    required TResult Function(Location location) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return error(this.error, stackTrace);
@@ -341,7 +370,7 @@ class _$GetLocationError implements GetLocationError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function()? successful,
+    TResult Function(Location location)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -393,8 +422,10 @@ class _$GetWeatherTearOff {
     return const GetWeatherStart();
   }
 
-  GetWeatherSuccessful successful() {
-    return const GetWeatherSuccessful();
+  GetWeatherSuccessful successful(Weather weather) {
+    return GetWeatherSuccessful(
+      weather,
+    );
   }
 
   GetWeatherError error(Object error, StackTrace stackTrace) {
@@ -413,14 +444,14 @@ mixin _$GetWeather {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function() successful,
+    required TResult Function(Weather weather) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function()? successful,
+    TResult Function(Weather weather)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) =>
@@ -494,7 +525,7 @@ class _$GetWeatherStart implements GetWeatherStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function() successful,
+    required TResult Function(Weather weather) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return $default();
@@ -504,7 +535,7 @@ class _$GetWeatherStart implements GetWeatherStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function()? successful,
+    TResult Function(Weather weather)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -547,6 +578,7 @@ abstract class GetWeatherStart implements GetWeather {
 abstract class $GetWeatherSuccessfulCopyWith<$Res> {
   factory $GetWeatherSuccessfulCopyWith(GetWeatherSuccessful value, $Res Function(GetWeatherSuccessful) then) =
       _$GetWeatherSuccessfulCopyWithImpl<$Res>;
+  $Res call({Weather weather});
 }
 
 /// @nodoc
@@ -557,46 +589,68 @@ class _$GetWeatherSuccessfulCopyWithImpl<$Res> extends _$GetWeatherCopyWithImpl<
 
   @override
   GetWeatherSuccessful get _value => super._value as GetWeatherSuccessful;
+
+  @override
+  $Res call({
+    Object? weather = freezed,
+  }) {
+    return _then(GetWeatherSuccessful(
+      weather == freezed
+          ? _value.weather
+          : weather // ignore: cast_nullable_to_non_nullable
+              as Weather,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetWeatherSuccessful implements GetWeatherSuccessful {
-  const _$GetWeatherSuccessful();
+  const _$GetWeatherSuccessful(this.weather);
+
+  @override
+  final Weather weather;
 
   @override
   String toString() {
-    return 'GetWeather.successful()';
+    return 'GetWeather.successful(weather: $weather)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GetWeatherSuccessful);
+    return identical(this, other) ||
+        (other is GetWeatherSuccessful &&
+            (identical(other.weather, weather) || const DeepCollectionEquality().equals(other.weather, weather)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(weather);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetWeatherSuccessfulCopyWith<GetWeatherSuccessful> get copyWith =>
+      _$GetWeatherSuccessfulCopyWithImpl<GetWeatherSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function() successful,
+    required TResult Function(Weather weather) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return successful();
+    return successful(weather);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function()? successful,
+    TResult Function(Weather weather)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
-      return successful();
+      return successful(weather);
     }
     return orElse();
   }
@@ -627,7 +681,11 @@ class _$GetWeatherSuccessful implements GetWeatherSuccessful {
 }
 
 abstract class GetWeatherSuccessful implements GetWeather {
-  const factory GetWeatherSuccessful() = _$GetWeatherSuccessful;
+  const factory GetWeatherSuccessful(Weather weather) = _$GetWeatherSuccessful;
+
+  Weather get weather => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetWeatherSuccessfulCopyWith<GetWeatherSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -704,7 +762,7 @@ class _$GetWeatherError implements GetWeatherError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function() successful,
+    required TResult Function(Weather weather) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return error(this.error, stackTrace);
@@ -714,7 +772,7 @@ class _$GetWeatherError implements GetWeatherError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function()? successful,
+    TResult Function(Weather weather)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {

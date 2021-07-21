@@ -15,26 +15,29 @@ class AppEpic {
 
   Epic<AppState> get epic {
     return combineEpics(<Epic<AppState>>[
-      TypedEpic<AppState, GetLocation>(_getLocation),
-      TypedEpic<AppState, GetWeather>(_getWeather),
+      TypedEpic<AppState, GetLocationStart>(_getLocation),
+      TypedEpic<AppState, GetWeatherStart>(_getWeather),
     ]);
   }
 
-  Stream<AppAction> _getLocation(Stream<GetLocation> actions, EpicStore<AppState> store) {
+  Stream<AppAction> _getLocation(Stream<GetLocationStart> actions, EpicStore<AppState> store) {
     return actions //
-        .asyncMap((GetLocation event) => _locationApi.getLocation())
-        .expand((Location location) {
+        .asyncMap((GetLocation event) {
+      final Future<Location> location = _locationApi.getLocation();
+      location.then((Location value) => print(value));
+      return location;
+    }).expand((Location location) {
       return <AppAction>[
-        const GetLocation.successful(),
+        GetLocation.successful(location),
         const GetWeather(),
       ];
     }).onErrorReturnWith((Object error, StackTrace stackTrace) => GetLocation.error(error, stackTrace));
   }
 
-  Stream<AppAction> _getWeather(Stream<GetWeather> actions, EpicStore<AppState> store) {
+  Stream<AppAction> _getWeather(Stream<GetWeatherStart> actions, EpicStore<AppState> store) {
     return actions //
         .asyncMap((GetWeather event) => _weatherApi.getWeather(store.state.location!))
-        .map((Weather weather) => const GetWeather.successful())
+        .map((Weather weather) => GetWeather.successful(weather))
         .onErrorReturnWith((Object error, StackTrace stackTrace) => GetWeather.error(error, stackTrace));
   }
 }
