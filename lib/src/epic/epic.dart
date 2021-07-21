@@ -22,11 +22,8 @@ class AppEpic {
 
   Stream<AppAction> _getLocation(Stream<GetLocationStart> actions, EpicStore<AppState> store) {
     return actions //
-        .asyncMap((GetLocation event) {
-      final Future<Location> location = _locationApi.getLocation();
-      location.then((Location value) => print(value));
-      return location;
-    }).expand((Location location) {
+        .asyncMap((GetLocation event) => _locationApi.getLocation())
+        .expand((Location location) {
       return <AppAction>[
         GetLocation.successful(location),
         const GetWeather(),

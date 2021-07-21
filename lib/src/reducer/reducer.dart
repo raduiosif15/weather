@@ -3,10 +3,6 @@ import 'package:weather/src/actions/index.dart';
 import 'package:weather/src/models/index.dart';
 
 Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
-  (AppState state, dynamic action) {
-    // print(action);
-    return state;
-  },
   TypedReducer<AppState, GetLocation>(_getLocation),
   TypedReducer<AppState, GetLocationSuccessful>(_getLocationSuccessful),
   TypedReducer<AppState, GetLocationError>(_getLocationError),
