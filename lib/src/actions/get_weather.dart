@@ -1,32 +1,11 @@
-import 'package:weather/src/models/weather.dart';
+part of actions;
 
-class GetWeather {
-  GetWeather();
+@freezed
+class GetWeather with _$GetWeather implements AppAction {
+  const factory GetWeather() = GetWeatherStart;
 
-  @override
-  String toString() {
-    return 'GetWeather{}';
-  }
-}
+  const factory GetWeather.successful() = GetWeatherSuccessful;
 
-class GetWeatherSuccessful {
-  GetWeatherSuccessful(this.weather);
-
-  final Weather weather;
-
-  @override
-  String toString() {
-    return 'GetWeatherSuccessful{weather: $weather}';
-  }
-}
-
-class GetWeatherError {
-  GetWeatherError(this.error);
-
-  final Object error;
-
-  @override
-  String toString() {
-    return 'GetWeatherError{error: $error}';
-  }
+  @Implements(ErrorAction)
+  const factory GetWeather.error(Object error, StackTrace stackTrace) = GetWeatherError;
 }

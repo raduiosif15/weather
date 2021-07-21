@@ -1,7 +1,6 @@
 import 'package:redux/redux.dart';
-import 'package:weather/src/actions/get_location.dart';
-import 'package:weather/src/actions/get_weather.dart';
-import 'package:weather/src/models/app_state.dart';
+import 'package:weather/src/actions/index.dart';
+import 'package:weather/src/models/index.dart';
 
 Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
   (AppState state, dynamic action) {
@@ -21,7 +20,7 @@ AppState _getLocation(AppState state, GetLocation action) {
 
 AppState _getLocationSuccessful(AppState state, GetLocationSuccessful action) {
   return state.rebuild((AppStateBuilder b) {
-    b.location.replace(action.location);
+    b.location.replace(action);
   });
 }
 

@@ -3,11 +3,11 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
-import 'package:weather/src/actions/get_location.dart';
+import 'package:weather/src/actions/index.dart';
 import 'package:weather/src/data/location_api.dart';
 import 'package:weather/src/data/weather_api.dart';
 import 'package:weather/src/epic/epic.dart';
-import 'package:weather/src/models/app_state.dart';
+import 'package:weather/src/models/index.dart';
 import 'package:weather/src/presentation/home_page.dart';
 import 'package:weather/src/reducer/reducer.dart';
 
@@ -24,7 +24,7 @@ void main() {
       EpicMiddleware<AppState>(appEpic.epic),
     ],
   );
-  store.dispatch(GetLocation());
+  store.dispatch(const GetLocation());
 
   runApp(WeatherApp(store: store));
 }
